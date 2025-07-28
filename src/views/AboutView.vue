@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    This is the Home page.
+    This is the About page.
   </div>
 </template>
 
