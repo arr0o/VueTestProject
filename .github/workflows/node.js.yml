@@ -10,14 +10,13 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build-deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    # strategy:
+    #   matrix:
+    #     node-version: [18.x, 20.x, 22.x]
+    #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       # Checkout code from repo
@@ -25,11 +24,12 @@ jobs:
         uses: actions/checkout@v4
         
       # Setup NodeJS
-      - name: Use Node.js ${{ matrix.node-version }}
+      # - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: 20
+          # cache: 'npm'
 
       # Install fresh dependencies
       - name: Install dependencies
