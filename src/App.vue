@@ -1,15 +1,11 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue';
-</script>
-
 <template>
-  <header>
-    <NavBar />
-  </header>
-  <h1>VueTestProject</h1>
-  <RouterView />
+  <Toast />
+  <MainPage />
 </template>
+
+<script setup lang="ts">
+  import MainPage from './components/pages/MainPage.vue';
+</script>
 
 <style scoped>
 </style>
